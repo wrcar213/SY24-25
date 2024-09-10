@@ -128,6 +128,7 @@
             this.button98 = new System.Windows.Forms.Button();
             this.button99 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -1030,11 +1031,21 @@
             this.button100.UseVisualStyleBackColor = true;
             this.button100.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button91_MouseDown);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(800, 446);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 644);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button91);
             this.Controls.Add(this.button92);
             this.Controls.Add(this.button93);
@@ -1138,6 +1149,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1243,6 +1255,7 @@
         private System.Windows.Forms.Button button98;
         private System.Windows.Forms.Button button99;
         private System.Windows.Forms.Button button100;
+        private System.Windows.Forms.Label label1;
     }
 }
 
