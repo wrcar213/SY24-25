@@ -14,6 +14,7 @@ namespace Minesweeper
     {
         Button[] btngrid = new Button[100];
         Tile[] tilegrid = new Tile[100];
+        Random Random = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -37,16 +38,30 @@ namespace Minesweeper
         private void button91_MouseDown(object sender, MouseEventArgs e)
         {
             Button b = sender as Button;
-            Tile t = tilegrid[getIndex (b)];
-            t.SetFlag();
+            Tile t = tilegrid[getIndex(b)];
+
+            if (e.Button == MouseButtons.Right)
+                t.SetFlag();
+            else
+                t.SetDug();
         }
 
 
         private void CreateMines(int numMines)
         {
+            int MineCount = 0;
             //until we have enough mines
-            //generate num 1-100
-            //set mine on that tile if it doesn't already have a mine
+            while (MineCount < numMines)
+            {
+                //generate num 1-100
+                int rNum = Random.Next(0, 100);
+                //set mine on that tile if it doesn't already have a mine
+                if (tilegrid[rNum].GetMine() == false)
+                {
+                    MineCount++;
+                    tilegrid[rNum].SetMine(true);
+                }
+            }
         }
         private void ResetBtn_Click(object sender, EventArgs e)
         {
@@ -60,7 +75,8 @@ namespace Minesweeper
                 tilegrid[i] = new Tile(btngrid[i]);
                 tilegrid[i].SetFlagImage(FlagPictureBox.Image);
                 tilegrid[i].SetMineImage(MinePictureBox.Image);
-                tilegrid[i].SetMine(true);
             }
+            CreateMines(5);
         }
-    }}
+    }
+}
