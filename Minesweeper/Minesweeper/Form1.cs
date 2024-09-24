@@ -37,15 +37,17 @@ namespace Minesweeper
         private void button91_MouseDown(object sender, MouseEventArgs e)
         {
             Button b = sender as Button;
-            b.BackColor = Color.Red;
+            Tile t = tilegrid[getIndex (b)];
+            t.SetFlag();
         }
-        private void button_MouseDown(object sender, MouseEventArgs e)
+
+
+        private void CreateMines(int numMines)
         {
-            Button b = sender as Button;
-            b.BackColor = Color.Red;
+            //until we have enough mines
+            //generate num 1-100
+            //set mine on that tile if it doesn't already have a mine
         }
-
-
         private void ResetBtn_Click(object sender, EventArgs e)
         {
             Reset();
@@ -56,7 +58,9 @@ namespace Minesweeper
             {
                 btngrid[i] = (Button)Controls["button" + (i + 1)];
                 tilegrid[i] = new Tile(btngrid[i]);
+                tilegrid[i].SetFlagImage(FlagPictureBox.Image);
+                tilegrid[i].SetMineImage(MinePictureBox.Image);
+                tilegrid[i].SetMine(true);
             }
         }
-    }
-}
+    }}

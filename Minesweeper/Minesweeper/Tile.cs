@@ -14,14 +14,33 @@ namespace Minesweeper
         private Boolean m_flag;
         private Boolean m_dug;
         private Boolean m_mine;
+        private Image m_FlagImage;
+        private Image m_MineImage;
         int m_nearby;
         public Tile(Button b)
         {
             m_b = b;
             m_b.BackColor = Color.Green;
         }
-        public void SetMine(Boolean b){ m_mine = b; }
+        public void SetNearby(int n) { m_nearby = n; }
+        public void SetFlagImage(Image FlagImage) { m_FlagImage = FlagImage; }
+        public void SetMineImage(Image MineImage) { m_MineImage = MineImage; }
+        public void SetMine(Boolean b)
+        {
+            m_mine = b;
+            //m_b.BackColor = Color.Red;
+            m_b.BackgroundImage = m_MineImage;
+        }
         public void SetDug(Boolean b) { m_dug = b; }
-        public void SetFlag(Boolean b) { m_flag = b; }
+        public void SetFlag()
+        {
+            m_flag = !m_flag;
+            if (m_flag)
+            {
+                m_b.BackgroundImage = m_FlagImage;
+            }
+            else
+                m_b.BackgroundImage = null;
+        }
     }
 }
