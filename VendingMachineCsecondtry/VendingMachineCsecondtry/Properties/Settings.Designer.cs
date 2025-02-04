@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vending_questionmark.Properties
+namespace VendingMachineCsecondtry.Properties
 {
 
 

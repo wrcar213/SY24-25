@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vending questionmark", "vending questionmark\vending questionmark.csproj", "{975229EB-873C-4DA8-AB0D-D15498C869EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineCsecondtry", "VendingMachineCsecondtry\VendingMachineCsecondtry.csproj", "{726C89B3-AD8C-4B4A-99D2-7CD1E5A57DFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{975229EB-873C-4DA8-AB0D-D15498C869EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{975229EB-873C-4DA8-AB0D-D15498C869EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{975229EB-873C-4DA8-AB0D-D15498C869EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{975229EB-873C-4DA8-AB0D-D15498C869EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726C89B3-AD8C-4B4A-99D2-7CD1E5A57DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726C89B3-AD8C-4B4A-99D2-7CD1E5A57DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726C89B3-AD8C-4B4A-99D2-7CD1E5A57DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726C89B3-AD8C-4B4A-99D2-7CD1E5A57DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {61485033-EC1C-45E6-B57C-E6D43EF304DD}
+		SolutionGuid = {A0D82E8D-B812-482A-B806-A5A80037004D}
 	EndGlobalSection
 EndGlobal

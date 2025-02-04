@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("vending questionmark")]
+[assembly: AssemblyTitle("VendingMachineCsecondtry")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Deer Valley Unified School District")]
-[assembly: AssemblyProduct("vending questionmark")]
+[assembly: AssemblyProduct("VendingMachineCsecondtry")]
 [assembly: AssemblyCopyright("Copyright © Deer Valley Unified School District 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("975229eb-873c-4da8-ab0d-d15498c869ee")]
+[assembly: Guid("726c89b3-ad8c-4b4a-99d2-7cd1e5a57dff")]
 
 // Version information for an assembly consists of the following four values:
 //
