@@ -17,24 +17,46 @@ namespace VendingMachineCsecondtry
         private string selectedProductName;
         private decimal selectedProductPrice;
         private CoinSlot coinSlot;
+        private Inventory inventory;
         public Form1()
         {
             InitializeComponent();
             coinSlot = new CoinSlot();
+            inventory = new Inventory();
 
         }
         private void showProduct(string productName, decimal price)
         {
+            var productInfo = inventory.GetProductInfo(productName);
+
+            // Ensure the price matches the inventory price
+            if (productInfo.Price != price)
+            {
+                lblPurchaseMessage.Text = "Product price mismatch.";
+                return;
+            }
+
             selectedProductName = productName;
-            selectedProductPrice = price;
+            selectedProductPrice = productInfo.Price;
             lblProductName.Text = productName;
-            lblProductPrice.Text = price.ToString("C");
+            lblProductPrice.Text = productInfo.Price.ToString("C");
+
+            // Check if the product is available
+            if (productInfo.Stock <= 0)
+            {
+                lblPurchaseMessage.Text = "This product is out of stock.";
+            }
+            else
+            {
+                lblPurchaseMessage.Text = "";
+            }
         }
+
 
         //Display Product Name And Price
         private void btnProduct1_Click(object sender, EventArgs e)
         {
-            showProduct("Vending Machine 1", 2.25m);
+             showProduct("Vending Machine 1", 2.25m);
         }
 
         private void btnProduct2_Click(object sender, EventArgs e)
@@ -131,20 +153,30 @@ namespace VendingMachineCsecondtry
                 lblPurchaseMessage.Text = "Please select a product.";
                 return;
             }
+            if (!inventory.IsProductAvailable(selectedProductName))
+            {
+                lblPurchaseMessage.Text = "This product is out of stock.";
+                return;
+            }
 
             if ((decimal)coinSlot.Total() >= selectedProductPrice)
             {
-                coinSlot.CoinReturn(); // Clear the coin slot after purchase
-                lblTotalAmount.Text = coinSlot.Total().ToString("C");
-                lblPurchaseMessage.Text = $"You purchased {selectedProductName}!";
+                if (inventory.PurchaseProduct(selectedProductName))
+                {
+                    coinSlot.CoinReturn(); // Clear the coin slot after purchase
+                    lblTotalAmount.Text = coinSlot.Total().ToString("C");
+                    lblPurchaseMessage.Text = $"You purchased {selectedProductName}!";
 
-                // Hide the purchased product
-
-                // Optionally reset the product selection
-                selectedProductName = null;
-                selectedProductPrice = 0;
-                lblProductName.Text = "";
-                lblProductPrice.Text = "";
+                    // Reset the product selection
+                    selectedProductName = null;
+                    selectedProductPrice = 0;
+                    lblProductName.Text = "";
+                    lblProductPrice.Text = "";
+                }
+                else
+                {
+                    lblPurchaseMessage.Text = "Product purchase failed.";
+                }
             }
             else
             {
