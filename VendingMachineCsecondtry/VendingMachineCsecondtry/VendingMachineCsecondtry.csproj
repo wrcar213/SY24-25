@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoinSlot.cs" />
+    <Compile Include="coinSlot2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

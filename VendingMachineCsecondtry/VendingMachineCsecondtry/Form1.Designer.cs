@@ -62,6 +62,7 @@
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.lblPurchaseMessage = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -353,11 +354,11 @@
             // lblTotalAmount
             // 
             this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Location = new System.Drawing.Point(752, 165);
+            this.lblTotalAmount.Location = new System.Drawing.Point(778, 128);
             this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(87, 16);
+            this.lblTotalAmount.Size = new System.Drawing.Size(38, 16);
             this.lblTotalAmount.TabIndex = 30;
-            this.lblTotalAmount.Text = "Product Price";
+            this.lblTotalAmount.Text = "$0.00";
             // 
             // btnPurchase
             // 
@@ -372,17 +373,27 @@
             // lblPurchaseMessage
             // 
             this.lblPurchaseMessage.AutoSize = true;
-            this.lblPurchaseMessage.Location = new System.Drawing.Point(761, 249);
+            this.lblPurchaseMessage.Location = new System.Drawing.Point(733, 245);
             this.lblPurchaseMessage.Name = "lblPurchaseMessage";
-            this.lblPurchaseMessage.Size = new System.Drawing.Size(51, 16);
+            this.lblPurchaseMessage.Size = new System.Drawing.Size(112, 16);
             this.lblPurchaseMessage.TabIndex = 32;
-            this.lblPurchaseMessage.Text = "label13";
+            this.lblPurchaseMessage.Text = "Purchase Results";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(736, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Coin Return";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 601);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPurchaseMessage);
             this.Controls.Add(this.btnPurchase);
             this.Controls.Add(this.lblTotalAmount);
@@ -459,6 +470,7 @@
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Button btnPurchase;
         private System.Windows.Forms.Label lblPurchaseMessage;
+        private System.Windows.Forms.Button button1;
     }
 }
 
