@@ -28,6 +28,7 @@ namespace VendingMachineCsecondtry
                 { "Vending Machine 12", (3.75m, 5) }
             };
         }
+        
 
         public (decimal Price, int Stock) GetProductInfo(string productName)
         {
