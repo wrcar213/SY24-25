@@ -1,16 +1,24 @@
-﻿using System;
+﻿using Quartet;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Console;
+using System.Windows.Forms;
 
-namespace Quartet
+namespace QuartetGame
 {
-    internal class Program
+    public partial class Form1 : Form
     {
-        static void Main(string[] args)
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
             CarCard A1 = new CarCard("A1", "BMW Z8", 250, 4.7, 400, 4941, 8, 6600);
             CarCard A2 = new CarCard("A2", "MG Xpower SV Club Sport", 230, 4.2, 465, 4997, 8, 6450);
@@ -44,63 +52,6 @@ namespace Quartet
             CarCard H2 = new CarCard("H2", "Alfa Romeo GT", 243, 6.7, 240, 3179, 6, 6400);
             CarCard H3 = new CarCard("H3", "Pontiac GTO", 280, 5.7, 5970, 400, 8, 5200);
             CarCard H4 = new CarCard("H4", "BMW M5", 250, 4.7, 4999, 507, 10, 7750);
-
-
-
-
-
-
-
-
-
-
-
-
-            //WriteLine(C4.Compare(D3,CarCard.category.RPM));
-            List<CarCard> List = new List<CarCard>();
-            List.Add(A1);
-            List.Add(A2);
-            List.Add(A3);
-            List.Add(A4);
-            List.Add(B1);
-            List.Add(B2);
-            List.Add(B3);
-            List.Add(B4);
-            List.Add(C1);
-            List.Add(C2);
-            List.Add(C3);
-            List.Add(C4);
-            List.Add(D1);
-            List.Add(D2);
-            List.Add(D3);
-            List.Add(D4);
-            List.Add(E1);
-            List.Add(E2);
-            List.Add(E3);
-            List.Add(E4);
-            List.Add(F1);
-            List.Add(F2);
-            List.Add(F3);
-            List.Add(F4);
-            List.Add(G1);
-            List.Add(G2);
-            List.Add(G3);
-            List.Add(G4);
-            List.Add(H1);
-            List.Add(H2);
-            List.Add(H3);
-            List.Add(H4);
-
-            
-            Deck d = new Deck(List);    
-            d.Shuffle();
-            Hand h1 = new Hand();
-            Hand h2 = new Hand();
-            Hand h3 = new Hand();
-            foreach (CarCard card in List)
-                
-                WriteLine(card);
-            ReadLine();
         }
     }
 }
