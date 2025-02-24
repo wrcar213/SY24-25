@@ -53,5 +53,16 @@ namespace QuartetGame
             CarCard H3 = new CarCard("H3", "Pontiac GTO", 280, 5.7, 5970, 400, 8, 5200);
             CarCard H4 = new CarCard("H4", "BMW M5", 250, 4.7, 4999, 507, 10, 7750);
         }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+        private void ShowCard(CarCard c)
+        {
+            
+        }
+        
     }
 }

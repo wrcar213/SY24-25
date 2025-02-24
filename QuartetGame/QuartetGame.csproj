@@ -46,14 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarCard.cs" />
+    <Compile Include="Deck.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +82,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
