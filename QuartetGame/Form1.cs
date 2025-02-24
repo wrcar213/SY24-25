@@ -56,7 +56,7 @@ namespace QuartetGame
 
         public void button1_Click(object sender, EventArgs e)
         {
-            
+            pictureBox1.Load("A11");
             
         }
         private void ShowCard(CarCard c)

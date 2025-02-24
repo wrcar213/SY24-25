@@ -62,14 +62,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,6 +172,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\A1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\A1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\A2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\A3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\A4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\B1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\B2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\B3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\B4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\C1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\C2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\C3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\C4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\D1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\D2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\D3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\D4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\E1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\E2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\E3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\E4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\G1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\G2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\G3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\G4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\H1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\H2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\H3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\H4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
