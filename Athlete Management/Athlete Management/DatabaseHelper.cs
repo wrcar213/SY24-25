@@ -45,6 +45,7 @@ namespace Athlete_Management
             }
             return athletes;
         }
+
         public Athlete GetAthleteById(int id)
         {
             List<Athlete> athletes = GetAllAthletes();
@@ -92,5 +93,6 @@ namespace Athlete_Management
                 serializer.Serialize(writer, athletes);
             }
         }
+
     }
 }

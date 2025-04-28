@@ -18,6 +18,7 @@ namespace Athlete_Management
         public string Gender { get; set; }
         public string ContactInfo { get; set; }
         public string FullName => $"{FirstName} {LastName}";
+        public TimeSpan StopwatchTime { get; set; } 
         public Athlete() { }
     }
 

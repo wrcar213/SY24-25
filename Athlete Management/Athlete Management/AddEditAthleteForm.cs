@@ -13,8 +13,9 @@ namespace Athlete_Management
 {
     public partial class AddEditAthleteForm : Form
     {
-        private Athlete _currentAthlete; // The Athlete object being added or edited.
-        private DatabaseHelper _dbHelper; // Instance of the DatabaseHelper to save the data.
+        public Athlete _currentAthlete; // The Athlete object being added or edited.
+        public DatabaseHelper _dbHelper; // Instance of the DatabaseHelper to save the data.
+
         public AddEditAthleteForm(Athlete athleteToEdit)
         {
             InitializeComponent();

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,7 +17,7 @@ namespace Athlete_Management
     public partial class Form1 : Form
     {
         private DatabaseHelper _dbHelper;
-        private List<Athlete> _athletes;
+        private List<Athlete> _athletes; 
         public Form1()
         {
             InitializeComponent();
@@ -121,8 +124,49 @@ namespace Athlete_Management
 
         private void btnStopwatch_Click(object sender, EventArgs e)
         {
-            Timing timerForm = new Timing(); // Create an instance of TimerForm
-            timerForm.Show(); // Show the TimerForm
+            // Check if any row is selected in the DataGridView.
+            if (dgvAthletes.SelectedRows.Count > 0)
+            {
+                // Get the AthleteID of the selected athlete from the DataGridView.
+                int selectedAthleteId = (int)dgvAthletes.SelectedRows[0].Cells["AthleteID"].Value;
+                // Retrieve the Athlete object from the XML file using the ID.
+                Athlete athleteToEdit = _dbHelper.GetAthleteById(selectedAthleteId);
+                // Check if the athlete was found.
+                if (athleteToEdit != null)
+                {
+                    Timing timerForm = new Timing(); // Create an instance of TimerForm
+                    timerForm._dbHelper = _dbHelper;
+                    timerForm._currentAthlete = _dbHelper.GetAthleteById(selectedAthleteId);
+                    timerForm.Show(); // Show the TimerForm
+                }
+                else
+                {
+                    // Display an error message if the athlete to edit was not found. This should not normally happen, but it's good to have error handling.
+                    MessageBox.Show("Could not find the selected athlete.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Display a message to the user to select an athlete to edit.
+                MessageBox.Show("Please select an athlete to edit.", "Information", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+
+
         }
+        public Athlete GetCurrentAthlete()
+        {
+            // Assuming you have a DataGridView named athleteDataGridView
+            if (dgvAthletes.SelectedRows.Count > 0)
+            {
+                return dgvAthletes.SelectedRows[0].DataBoundItem as Athlete; // Cast the bound item to Athlete
+            }
+            return null; // Return null if no athlete is selected
+        }
+
+
+
+
     }
 }
