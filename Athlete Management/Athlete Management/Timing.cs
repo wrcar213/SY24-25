@@ -20,7 +20,7 @@ namespace Athlete_Management
         private Timer timer;
         public Athlete _currentAthlete; // The Athlete object being added or edited.
         public DatabaseHelper _dbHelper; // Instance of the DatabaseHelper to save the data.
-
+        public TimeSpan time;
 
         public Timing()
         {
@@ -31,16 +31,16 @@ namespace Athlete_Management
             timer.Tick += timer1_Tick;
             _dbHelper = new DatabaseHelper("athletes.xml"); // Use the same XML file.
 
-            
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (!Stopwatch.IsRunning) 
+            if (!Stopwatch.IsRunning)
             {
                 Stopwatch.Start();
                 timer.Start();
-            } 
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -73,18 +73,18 @@ namespace Athlete_Management
                 timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public void btnSave_Click(object sender, EventArgs e)
         {
             lblTime.Text = FormatTime(Stopwatch.Elapsed);
             // Try to parse the lblTime.Text into a TimeSpan
             TimeSpan.TryParse(lblTime.Text, out TimeSpan time);
-            
 
-                _currentAthlete.StopwatchTime = time;
-                _dbHelper.UpdateAthlete(_currentAthlete);
 
-                Close();
+            _currentAthlete.StopwatchTime = time;
             
+            _dbHelper.UpdateAthlete(_currentAthlete);
+            Close();
+
         }
     }
 }

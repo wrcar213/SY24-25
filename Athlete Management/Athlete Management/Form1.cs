@@ -17,15 +17,17 @@ namespace Athlete_Management
     public partial class Form1 : Form
     {
         private DatabaseHelper _dbHelper;
-        private List<Athlete> _athletes; 
+        private List<Athlete> _athletes;
+        public TimeSpan time;
         public Form1()
         {
             InitializeComponent();
             // Initialize the DatabaseHelper with the XML file path. Make sure athletes.xml is in the same\directory as the executable, or specify the full path.
             _dbHelper = new DatabaseHelper("athletes.xml");
+            time = new TimeSpan();
             LoadAthletes();
         }
-        private void LoadAthletes()
+        public void LoadAthletes()
         {
             _athletes = _dbHelper.GetAllAthletes();
             dgvAthletes.DataSource = _athletes;
@@ -122,8 +124,9 @@ namespace Athlete_Management
             dgvAthletes.DataSource = filteredAthletes;
         }
 
-        private void btnStopwatch_Click(object sender, EventArgs e)
+        public void btnStopwatch_Click(object sender, EventArgs e)
         {
+            Timing timerForm = new Timing(); // Create an instance of TimerForm
             // Check if any row is selected in the DataGridView.
             if (dgvAthletes.SelectedRows.Count > 0)
             {
@@ -134,7 +137,7 @@ namespace Athlete_Management
                 // Check if the athlete was found.
                 if (athleteToEdit != null)
                 {
-                    Timing timerForm = new Timing(); // Create an instance of TimerForm
+                    
                     timerForm._dbHelper = _dbHelper;
                     timerForm._currentAthlete = _dbHelper.GetAthleteById(selectedAthleteId);
                     timerForm.Show(); // Show the TimerForm
@@ -152,7 +155,7 @@ namespace Athlete_Management
                 MessageBox.Show("Please select an athlete to edit.", "Information", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             }
-
+            
 
         }
         public Athlete GetCurrentAthlete()

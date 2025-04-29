@@ -34,7 +34,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnStopwatch = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAthletes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,21 +96,11 @@
             this.btnStopwatch.UseVisualStyleBackColor = true;
             this.btnStopwatch.Click += new System.EventHandler(this.btnStopwatch_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(145, 324);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 114);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 450);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnStopwatch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
@@ -134,7 +123,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnStopwatch;
-        private System.Windows.Forms.Button btnSave;
     }
 }
 
