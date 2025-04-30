@@ -77,12 +77,14 @@ namespace Athlete_Management
         {
             lblTime.Text = FormatTime(Stopwatch.Elapsed);
             // Try to parse the lblTime.Text into a TimeSpan
-            TimeSpan.TryParse(lblTime.Text, out TimeSpan time);
-
-
+            
+            string timeToSave = Stopwatch.Elapsed.ToString(@"hh\:mm\:ss\.fff");
+            TimeSpan.TryParse((string)timeToSave, out TimeSpan time);
             _currentAthlete.StopwatchTime = time;
             
             _dbHelper.UpdateAthlete(_currentAthlete);
+            DialogResult = DialogResult.OK;
+
             Close();
 
         }
