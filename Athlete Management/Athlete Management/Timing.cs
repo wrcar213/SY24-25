@@ -84,7 +84,7 @@ namespace Athlete_Management
             
             _dbHelper.UpdateAthlete(_currentAthlete);
             DialogResult = DialogResult.OK;
-
+            
             Close();
 
         }
