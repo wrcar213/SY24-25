@@ -15,12 +15,14 @@ namespace Athlete_Management
 {
     public partial class Timing : Form
     {
-
+        
         public Stopwatch Stopwatch;
         private Timer timer;
         public Athlete _currentAthlete; // The Athlete object being added or edited.
         public DatabaseHelper _dbHelper; // Instance of the DatabaseHelper to save the data.
         public TimeSpan time;
+        public List<ParticapantResult> results;
+        
 
         public Timing()
         {
@@ -45,6 +47,19 @@ namespace Athlete_Management
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            lblTime.Text = FormatTime(Stopwatch.Elapsed);
+            // Try to parse the lblTime.Text into a TimeSpan
+
+            string timeToSave = Stopwatch.Elapsed.ToString(@"hh\:mm\:ss\.fff");
+            TimeSpan.TryParse((string)timeToSave, out TimeSpan time);
+            _currentAthlete.StopwatchTime = time;
+            //Add to the list
+            ParticapantResult result = null;
+            result = new ParticapantResult();
+            result.Name = _currentAthlete.FullName;
+            result.BibNumber = _currentAthlete.BibNumber;
+            result.Team = _currentAthlete.Team;
+            result.FinishTime = _currentAthlete.StopwatchTime;
             if (Stopwatch.IsRunning)
             {
                 Stopwatch.Stop();
@@ -75,12 +90,7 @@ namespace Athlete_Management
 
         public void btnSave_Click(object sender, EventArgs e)
         {
-            lblTime.Text = FormatTime(Stopwatch.Elapsed);
-            // Try to parse the lblTime.Text into a TimeSpan
             
-            string timeToSave = Stopwatch.Elapsed.ToString(@"hh\:mm\:ss\.fff");
-            TimeSpan.TryParse((string)timeToSave, out TimeSpan time);
-            _currentAthlete.StopwatchTime = time;
             
             _dbHelper.UpdateAthlete(_currentAthlete);
             DialogResult = DialogResult.OK;

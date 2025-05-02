@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Athlete_Management
 {
-    internal class ParticapantResult
+    public class ParticapantResult
     {
         public string BibNumber { get; set; }
         public string Name { get; set; }
         public string Team { get; set; }
         public TimeSpan FinishTime { get; set; }
-        public int Rank { get; set; }
         // Add other relevant properties like checkpoint times
+        List<ParticapantResult> result = new List<ParticapantResult>();
     }
-    List<ParticipantResult> results = new List<ParticipantResult>();
+    
+
+
 }
