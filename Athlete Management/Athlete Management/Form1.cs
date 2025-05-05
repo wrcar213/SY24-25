@@ -19,11 +19,15 @@ namespace Athlete_Management
         private DatabaseHelper _dbHelper;
         private List<Athlete> _athletes;
         public TimeSpan time;
+        public List<ParticapantResult> results;
         public Form1()
         {
             InitializeComponent();
+            Timing timing = new Timing();
             // Initialize the DatabaseHelper with the XML file path. Make sure athletes.xml is in the same\directory as the executable, or specify the full path.
             _dbHelper = new DatabaseHelper("athletes.xml");
+            results = new List<ParticapantResult>();
+            List<ParticapantResult> result = timing.results;
             time = new TimeSpan();
             LoadAthletes();
         }
@@ -77,8 +81,8 @@ namespace Athlete_Management
                 else
                 {
                     // Display an error message if the athlete to edit was not found. This should not normally happen, but it's good to have error handling.
-                MessageBox.Show("Could not find the selected athlete.", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                    MessageBox.Show("Could not find the selected athlete.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 }
             }
             else
@@ -97,8 +101,8 @@ namespace Athlete_Management
                 int selectedAthleteId = (int)dgvAthletes.SelectedRows[0].Cells["AthleteID"].Value;
                 Athlete athleteToDelete = _dbHelper.GetAthleteById(selectedAthleteId);
                 // Confirm the deletion with the user.
-                if (athleteToDelete != null && MessageBox.Show($"Are you sure you want to delete {athleteToDelete.FullName} (Bib: { athleteToDelete.BibNumber}","Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-{
+                if (athleteToDelete != null && MessageBox.Show($"Are you sure you want to delete {athleteToDelete.FullName} (Bib: {athleteToDelete.BibNumber}", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
                     // Delete the athlete from the XML file.
                     _dbHelper.DeleteAthlete(selectedAthleteId);
                     LoadAthletes(); // Reload the athlete list.
@@ -137,7 +141,7 @@ namespace Athlete_Management
                 // Check if the athlete was found.
                 if (athleteToEdit != null)
                 {
-                    
+
                     timerForm._dbHelper = _dbHelper;
                     timerForm._currentAthlete = _dbHelper.GetAthleteById(selectedAthleteId);
                     timerForm.Show(); // Show the TimerForm
@@ -155,7 +159,7 @@ namespace Athlete_Management
                 MessageBox.Show("Please select an athlete to edit.", "Information", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             }
-            
+
 
         }
         public Athlete GetCurrentAthlete()
@@ -211,8 +215,50 @@ namespace Athlete_Management
             return field;
         }
 
+        private void exportCsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Show the SaveFileDialog to let the user choose the file path
+            if (saveFileDialogCsv.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialogCsv.FileName;
+                // Get your race results data (replace with your actual data source)
+                List<ParticapantResult> results = GetRaceResults(); // You need to implement this method
+                ExportToCsv(results, filePath);
+            }
 
 
-
+        }
+        private List<ParticapantResult> GetRaceResults()
+        {
+            // Replace this with your actual logic to retrieve the race results
+            // For example, you might get it from a DataGridView, a database query, or a stored list.
+            List<ParticapantResult> results = new List<ParticapantResult>();
+            // Add dummy data for demonstration
+            results.Add(new ParticapantResult
+            {
+                BibNumber = "101",
+                Name = "John Doe",
+                Team = "Team A",
+                FinishTime = TimeSpan.FromMinutes(20.5),
+                Rank = 1
+            });
+            results.Add(new ParticapantResult
+            {
+                BibNumber = "102",
+                Name = "Jane Smith",
+                Team = "Team B",
+                FinishTime = TimeSpan.FromMinutes(21.2),
+                Rank = 2
+            });
+            results.Add(new ParticapantResult
+            {
+                BibNumber = "103",
+                Name = "Peter Jones",
+                Team = "Team A",
+                FinishTime = TimeSpan.FromMinutes(22.1),
+                Rank = 3
+            });
+            return results;
+        }
     }
 }

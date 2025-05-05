@@ -19,6 +19,7 @@ namespace Athlete_Management
         public string ContactInfo { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public TimeSpan StopwatchTime { get; set; } 
+        public int Rank { get; set; }
         public Athlete() { }
     }
 

@@ -60,6 +60,7 @@ namespace Athlete_Management
             result.BibNumber = _currentAthlete.BibNumber;
             result.Team = _currentAthlete.Team;
             result.FinishTime = _currentAthlete.StopwatchTime;
+            result.Rank = _currentAthlete.Rank;
             if (Stopwatch.IsRunning)
             {
                 Stopwatch.Stop();

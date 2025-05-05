@@ -34,7 +34,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnStopwatch = new System.Windows.Forms.Button();
-            this.btnExportCsv = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exportCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialogCsv = new System.Windows.Forms.SaveFileDialog();
@@ -101,15 +100,6 @@
             this.btnStopwatch.UseVisualStyleBackColor = true;
             this.btnStopwatch.Click += new System.EventHandler(this.btnStopwatch_Click);
             // 
-            // btnExportCsv
-            // 
-            this.btnExportCsv.Location = new System.Drawing.Point(1013, 366);
-            this.btnExportCsv.Name = "btnExportCsv";
-            this.btnExportCsv.Size = new System.Drawing.Size(152, 91);
-            this.btnExportCsv.TabIndex = 6;
-            this.btnExportCsv.Text = "Export To CSV";
-            this.btnExportCsv.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -126,13 +116,18 @@
             this.exportCsvToolStripMenuItem.Name = "exportCsvToolStripMenuItem";
             this.exportCsvToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.exportCsvToolStripMenuItem.Text = "Export to CSV";
+            this.exportCsvToolStripMenuItem.Click += new System.EventHandler(this.exportCsvToolStripMenuItem_Click);
+            // 
+            // saveFileDialogCsv
+            // 
+            this.saveFileDialogCsv.DefaultExt = "csv";
+            this.saveFileDialogCsv.Filter = "\"CSV Files (*.csv)|*.csv|Allfiles(*.*)|*.*\".";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 467);
-            this.Controls.Add(this.btnExportCsv);
             this.Controls.Add(this.btnStopwatch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
@@ -159,7 +154,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnStopwatch;
-        private System.Windows.Forms.Button btnExportCsv;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exportCsvToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialogCsv;

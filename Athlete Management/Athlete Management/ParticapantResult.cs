@@ -12,6 +12,7 @@ namespace Athlete_Management
         public string Name { get; set; }
         public string Team { get; set; }
         public TimeSpan FinishTime { get; set; }
+        public int Rank { get; set; }
         // Add other relevant properties like checkpoint times
         List<ParticapantResult> result = new List<ParticapantResult>();
     }
